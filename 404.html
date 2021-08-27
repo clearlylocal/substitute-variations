@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Redirecting…</title>
-
+	</head>
+	<body>
 		<noscript> You need to enable JavaScript to run this app. </noscript>
 
 		<script type="text/javascript">
@@ -14,9 +15,10 @@
 
 				const url = new URL(location.href)
 
-				url.pathname = url.pathname.split('/')
-			            .slice(0, 1 + segmentCount)
-			            .join('/')
+				url.pathname = url.pathname
+					.split('/')
+					.slice(0, 1 + segmentCount)
+					.join('/')
 
 				url.searchParams.set(
 					'redirect',
@@ -26,6 +28,5 @@
 				location.replace(url.href)
 			}
 		</script>
-	</head>
-	<body></body>
+	</body>
 </html>
